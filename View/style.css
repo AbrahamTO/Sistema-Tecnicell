@@ -10,13 +10,8 @@
     width: 200px;
     height: 100%;
     background: #ed3838;
-    left: -200px;
-    transition: all 380ms linear;
 }
 
-#sidebar.active{
-    left: 0;
-}
 
 #sidebar ul li{
     color: rgba(230, 230, 230, .9);
