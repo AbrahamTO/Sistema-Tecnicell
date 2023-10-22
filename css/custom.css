@@ -59,9 +59,9 @@ body,html{
   
   
   
-  h1,h2,h3,h4,h5,h6,.h1,.21,.h3,.h4{
+  h1,h2,h3,h4,h5,h6,.h1,.h3,.h4{
 	   font-weight:400;
-	   line-height;1.5em;
+	   line-height:1.5em;
   }
   
   p{
@@ -265,7 +265,7 @@ overflow:auto;
 		  z-index:9;
 		  position:relative;
 		  padding:15px 30px;
-		  background-color:#353b48;
+		  background-color:#c52c2c;
 	 }
 	 
 	 .xd-topbar{
@@ -274,7 +274,7 @@ overflow:auto;
 	 }
 	 
 	 input[type="search"]{
-		 background-color:#4a5263;
+		 background-color:#de6161;
 		 color:#fff;
 		 padding-left:20px;
 		 border:none;
@@ -328,7 +328,7 @@ overflow:auto;
 	   }
 	   
 	   .navbar{
-		   background-color:#353B48;
+		   background-color:#c52c2c;
 		   color:#fff;
 	   }
 	   
@@ -374,21 +374,6 @@ background-color:rgba(0,0,0,0.09);
 		  color:#fff;
 	  }
 	  
-	  .navbar .notification{
-		  position:absolute;
-		  top:2px;
-		  right:3px;
-		  display:block;
-		  font-size:9px;
-		  border:0;
-		  background-color:#2bcd72;
-		  min-width:15px;
-		  text-align:center;
-		  padding:1px 5px;
-		  height:15px;
-		  border-radius:2px;
-		  line-height:14px;
-	  }
 	  
 	  @media (max-width:768px){
 		  .xp-searchbar{
@@ -464,7 +449,7 @@ background-color:rgba(0,0,0,0.09);
 		  width:12px;
 		  height:12px;
 		  border-radius:50%;
-		  border:2px solid #353b48;
+		  border:2px solid #c52c2c;
 		  background-color:#4c7cf3;
 	  }
 	  
@@ -485,7 +470,7 @@ background-color:rgba(0,0,0,0.09);
 }
 	   
 	   .table-title{
-		   background:#353b48;
+		   background:#c52c2c;
 		   color:#fff;
 		   position:sticky;
 		   top:0;
@@ -563,7 +548,7 @@ background-color:rgba(0,0,0,0.09);
 	   
 	   table.table td a{
 		   font-weight:bold;
-		   color:#566787;
+		   color:#c52c2c;
 		   display:inline-block;
 		   text-decoration:none;
 		   outline:none!important;
@@ -674,8 +659,8 @@ background-color:rgba(0,0,0,0.09);
 			}
 			
 				.custom-checkbox input[type="checkbox"]:checked + label:before{
-					border-color:#03A9F4;
-					background:#03A9F4;
+					border-color:#d92727;
+					background:#ec3939;
 				}
 			
 			
@@ -746,7 +731,7 @@ background-color:rgba(0,0,0,0.09);
 		   
 		      /*-------footer design start------*/
 			  footer{
-		       background-color:#353b48;
+		       background-color:#c52c2c;
 			   color:#fff;
 			   text-align:center;
 			   padding:10px 30px;
