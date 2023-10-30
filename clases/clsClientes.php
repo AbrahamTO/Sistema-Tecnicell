@@ -34,7 +34,8 @@ class Clientes
     {
         $query = "UPDATE cliente
         SET nombres = '$this->nombres', equipo = '$this->equipo', detalles = '$this->detalles',
-        numero = '$this->numero', fecha_registro = '$this->fecha_registro', estado = '$this->estado' WHERE id_cliente = '$this->id_cliente';";
+        numero = '$this->numero', fecha_registro = '$this->fecha_registro', estado = '$this->estado' 
+        WHERE id_cliente = '$this->id_cliente';";
         return mysqli_query($con, $query);
     }
 

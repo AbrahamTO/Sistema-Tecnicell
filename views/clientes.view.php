@@ -127,7 +127,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-success">
-                <h4 class="modal-title" id="defaultModalLabel">Editar Trabajador</h4>
+                <h4 class="modal-title" id="defaultModalLabel">Editar Cliente</h4>
             </div>
             <div class="modal-body">
 
@@ -156,7 +156,7 @@
                     </div>
                     <div class="form-group">
                         <label>Estado</label>
-                        <select type="option" name="estado" id="estado" class="form-control" name="estado" required>
+                        <select type="option" name="estado" id="estado" class="form-control" required>
                             <option value="Pendiente">Pendiente</option>
                             <option value="Finalizado">Finalizado</option>
                         </select>
@@ -177,7 +177,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-danger">
-                <h4 class="modal-title" id="defaultModalLabel">Eliminar Trabajador</h4>
+                <h4 class="modal-title" id="defaultModalLabel">Eliminar Cliente</h4>
             </div>
             <div class="modal-body">
 
