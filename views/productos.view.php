@@ -6,6 +6,16 @@
                 <div class="col-sm-6">
                     <h1>Productos</h1>
                 </div>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <input type="text" id="searchProduct" class="form-control" placeholder="Buscar por nombre">
+                        <div class="input-group-append">
+                            <button id="searchButton" class="btn btn-primary" type="button">
+                                <i class="fas fa-search"></i> Buscar
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-sm-6 text-right">
                     <button title="Agregar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddModal">
                         <i class="fas fa-plus"></i> Agregar Nuevo Producto
@@ -56,6 +66,27 @@
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>
+                                <script>
+                                    document.getElementById('searchProduct').addEventListener('keyup', function() {
+                                        var input, filter, table, tr, td, i, txtValue;
+                                        input = document.getElementById('searchProduct');
+                                        filter = input.value.toUpperCase();
+                                        table = document.getElementById('example2'); // ID de la tabla de productos
+                                        tr = table.getElementsByTagName('tr');
+
+                                        for (i = 0; i < tr.length; i++) {
+                                            td = tr[i].getElementsByTagName('td')[1]; // Columna del nombre del producto (ajusta el índice según tu estructura)
+                                            if (td) {
+                                                txtValue = td.textContent || td.innerText;
+                                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                                    tr[i].style.display = '';
+                                                } else {
+                                                    tr[i].style.display = 'none';
+                                                }
+                                            }
+                                        }
+                                    });
+                                </script>
                             </tbody>
                         </table>
                     </div>
