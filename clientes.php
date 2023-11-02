@@ -7,6 +7,7 @@ $cliente = new Clientes();
 if (isset($_POST['ingresar_cliente'])) {
     $add_nombres = mysqli_real_escape_string($con, $_POST['add_nombres'] ?? '');
     $add_equipo = mysqli_real_escape_string($con, $_POST['add_equipo'] ?? '');
+    $add_imei = mysqli_real_escape_string($con, $_POST['add_imei'] ?? '');
     $add_detalles = mysqli_real_escape_string($con, $_POST['add_detalles'] ?? '');
     $add_numero = mysqli_real_escape_string($con, $_POST['add_numero'] ?? '');
     $add_fecha_registro = mysqli_real_escape_string($con, $_POST['add_fecha_registro'] ?? '');
@@ -18,6 +19,7 @@ if (isset($_POST['ingresar_cliente'])) {
     } else {
         $cliente->nombres = $add_nombres;
         $cliente->equipo = $add_equipo;
+        $cliente->imei = $add_imei;
         $cliente->detalles = $add_detalles;
         $cliente->numero = $add_numero;
         $cliente->fecha_registro = $add_fecha_registro;
@@ -33,6 +35,7 @@ if (isset($_POST['ingresar_cliente'])) {
 } else if (isset($_POST['modificar_cliente'])) {
     $nombres = mysqli_real_escape_string($con, $_POST['nombres'] ?? '');
     $equipo = mysqli_real_escape_string($con, $_POST['equipo'] ?? '');
+    $imei = mysqli_real_escape_string($con, $_POST['imei'] ?? '');
     $detalles = mysqli_real_escape_string($con, $_POST['detalles'] ?? '');
     $numero = mysqli_real_escape_string($con, $_POST['numero'] ?? '');
     $fecha_registro = mysqli_real_escape_string($con, $_POST['fecha_registro'] ?? '');
@@ -44,6 +47,7 @@ if (isset($_POST['ingresar_cliente'])) {
     } else {
         $cliente->nombres = $nombres;
         $cliente->equipo = $equipo;
+        $cliente->imei = $imei;
         $cliente->detalles = $detalles;
         $cliente->numero = $numero;
         $cliente->fecha_registro = $fecha_registro;
