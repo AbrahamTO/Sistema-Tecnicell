@@ -4,6 +4,7 @@ class Clientes
     public int $id_cliente;
     public string $nombres;
     public string $equipo;
+    public string $imei;
     public string $detalles;
     public string $numero;
     public string $fecha_registro;
@@ -11,8 +12,8 @@ class Clientes
 
     public function Registro($con)
     {
-        $query = "INSERT INTO cliente(nombres, equipo, detalles, numero, fecha_registro, estado)
-        VALUES('$this->nombres', '$this->equipo', '$this->detalles', '$this->numero', '$this->fecha_registro', '$this->estado');";
+        $query = "INSERT INTO cliente(nombres, imei, equipo, detalles, numero, fecha_registro, estado)
+        VALUES('$this->nombres', '$this->equipo', '$this->imei','$this->detalles', '$this->numero', '$this->fecha_registro', '$this->estado');";
 
         return mysqli_query($con, $query);
     }
@@ -33,7 +34,7 @@ class Clientes
     public function Modificar($con)
     {
         $query = "UPDATE cliente
-        SET nombres = '$this->nombres', equipo = '$this->equipo', detalles = '$this->detalles',
+        SET nombres = '$this->nombres', equipo = '$this->equipo', imei = '$this->imei', detalles = '$this->detalles',
         numero = '$this->numero', fecha_registro = '$this->fecha_registro', estado = '$this->estado' 
         WHERE id_cliente = '$this->id_cliente';";
         return mysqli_query($con, $query);
