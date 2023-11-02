@@ -6,13 +6,19 @@
                 <div class="col-sm-6">
                     <h1>Clientes</h1>
                 </div>
-                <div class="col-sm-6 text-right">
-                    <button title="Agregar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddModal">
-                        <i class="fas fa-plus"></i> Agregar Nuevo Cliente
-                    </button>
+                <div class="col-sm-3">
+                <div class="input-group">
+                        <input type="text" id="searchCliente" class="form-control" placeholder="Buscar por nombre de cliente">
+                    </div>
                 </div>
-            </div>
-        </div><!-- /.container-fluid -->
+                <div class="col-sm-3">
+                    <div class="text-center">
+                        <button title="Agregar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddModal">
+                            <i class="fas fa-plus"></i> Agregar Nuevo Cliente
+                        </button>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->
@@ -28,6 +34,7 @@
                                     <th>#</th>
                                     <th>Nombres</th>
                                     <th>Equipo</th>
+                                    <th>IMEI</th>
                                     <th>Detalles</th>
                                     <th>Número</th>
                                     <th>Fecha de registro</th>
@@ -42,14 +49,15 @@
                                         <td><?php echo $row['id_cliente'] ?></td>
                                         <td><?php echo $row['nombres'] ?></td>
                                         <td><?php echo $row['equipo'] ?></td>
+                                        <td><?php echo $row['imei'] ?></td>
                                         <td><?php echo $row['detalles'] ?></td>
                                         <td><?php echo $row['numero'] ?></td>
                                         <td><?php echo $row['fecha_registro'] ?></td>
                                         <td><?php echo $row['estado'] ?></td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-sm-6">
-                                                    <a title="Modificar Cliente" data-toggle="modal" data-target="#EditModal" href="javascript:void(0);" onclick="document.getElementById('id_cliente').value = <?= $row['id_cliente'] ?>;document.getElementById('nombres').value = '<?= $row['nombres'] ?>';document.getElementById('equipo').value = '<?= $row['equipo'] ?>';document.getElementById('detalles').value = '<?= $row['detalles'] ?>';document.getElementById('numero').value = '<?= $row['numero'] ?>';document.getElementById('fecha_registro').value = '<?= $row['fecha_registro'] ?>';document.getElementById('estado').value = '<?= $row['estado'] ?>';" class="btn btn-success btn-sm">
+                                                <div >
+                                                    <a title="Modificar Cliente" data-toggle="modal" data-target="#EditModal" href="javascript:void(0);" onclick="document.getElementById('id_cliente').value = <?= $row['id_cliente'] ?>;document.getElementById('nombres').value = '<?= $row['nombres'] ?>';document.getElementById('equipo').value = '<?= $row['equipo'] ?>';document.getElementById('imei').value = '<?= $row['imei'] ?>';document.getElementById('detalles').value = '<?= $row['detalles'] ?>';document.getElementById('numero').value = '<?= $row['numero'] ?>';document.getElementById('fecha_registro').value = '<?= $row['fecha_registro'] ?>';document.getElementById('estado').value = '<?= $row['estado'] ?>';" class="btn btn-success btn-sm">
                                                         <i class="fas fa-edit"></i> Modificar
                                                     </a>
                                                 </div>
@@ -63,9 +71,9 @@
                                     </tr>
                                 <?php endwhile; ?>
                                 <script>
-                                    document.getElementById('searchProduct').addEventListener('keyup', function() {
+                                    document.getElementById('searchCliente').addEventListener('keyup', function() {
                                         var input, filter, table, tr, td, i, txtValue;
-                                        input = document.getElementById('searchProduct');
+                                        input = document.getElementById('searchCliente');
                                         filter = input.value.toUpperCase();
                                         table = document.getElementById('example2'); // ID de la tabla de productos
                                         tr = table.getElementsByTagName('tr');
@@ -112,6 +120,10 @@
                     <div class="form-group">
                         <label>Equipo</label>
                         <input type="text" name="add_equipo" id="add_equipo" class="form-control" placeholder="Modelo del equipo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>IMEI</label>
+                        <input type="number" name="add_imei" id="add_imei" class="form-control" placeholder="IMEI del equipo">
                     </div>
                     <div class="form-group">
                         <label>Detalles</label>
@@ -162,6 +174,10 @@
                     <div class="form-group">
                         <label>Equipo</label>
                         <input type="text" name="equipo" id="equipo" class="form-control" onkeypress="return" required>
+                    </div>
+                    <div class="form-group">
+                        <label>IMEI</label>
+                        <input type="number" name="imei" id="imei" class="form-control" onkeypress="return">
                     </div>
                     <div class="form-group">
                         <label>Detalles</label>
