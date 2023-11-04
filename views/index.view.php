@@ -27,7 +27,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <b>Bienvenido</b> a Tecnicell
+            <b>Bienvenido a Tecnicell</b> 
         </div>
         <!-- /.login-logo -->
         <div class="card">
