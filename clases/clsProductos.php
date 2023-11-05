@@ -31,7 +31,7 @@ class Productos
     {
         $query = "UPDATE productos
         SET nombres = '$this->nombres', cantidad = '$this->cantidad', categoria = '$this->categoria'
-        WHERE id_productos = '$this->id_productos';";
+          WHERE id_productos = '$this->id_productos';";
         return mysqli_query($con, $query);
     }
 

@@ -17,7 +17,7 @@
                 <i class="far fa-user"></i>
             </a>
             <a class="nav-link text-danger" href="panel.php?modulo=cerrar" title="Cerrar sesion">
-                <i class="fas fa-door-closed"></i>
+                <i class="fas fa-door-closed    "></i>
             </a>
 
         </ul>
@@ -32,7 +32,7 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="dist/img/usuario.png" class="img-circle elevation-2" alt="User Image">
+                    <img src="dist/img/imgpeque.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a title="Logo" class="d-block">TECNICELL PLUS</a>

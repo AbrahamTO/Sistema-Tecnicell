@@ -6,20 +6,23 @@
                 <div class="col-sm-6">
                     <h1>Productos</h1>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-3">
                     <div class="input-group">
                         <input type="text" id="searchProduct" class="form-control" placeholder="Buscar por nombre">
                         <div class="input-group-append">
-                            <button id="searchButton" class="btn btn-primary" type="button">
+                           <!-- <button id="searchButton" class="btn btn-primary" type="button">
                                 <i class="fas fa-search"></i> Buscar
-                            </button>
+                            </button>-->
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 text-right">
+
+                <div class="col-sm-3 ">
+                    <div class="text-center">
                     <button title="Agregar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddModal">
                         <i class="fas fa-plus"></i> Agregar Nuevo Producto
                     </button>
+                </div>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -87,6 +90,7 @@
                                         }
                                     });
                                 </script>
+
                             </tbody>
                         </table>
                     </div>
@@ -119,7 +123,7 @@
                     </div>
                     <div class="form-group">
                         <label>Categoria</label>
-                        <select type="option" name="add_categoria" id="add_categoria" class="form-control"required>
+                        <select type="option" name="add_categoria" id="add_categoria" class="form-control"  required>
                             <option value="Accesorios">Accesorios</option>
                             <option value="Repuestos">Repuestos</option>
                         </select>
@@ -162,7 +166,9 @@
                             <option value="Repuestos">Repuestos</option>
                         </select>
                     </div>
+
                     <input type="submit" name="modificar_productos" id="modificar_productos" Value="Actualizar" class="btn btn-success">
+
                 </form>
             </div>
             <div class="modal-footer">
