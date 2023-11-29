@@ -7,7 +7,7 @@
                     <h1>Clientes</h1>
                 </div>
                 <div class="col-sm-3">
-                <div class="input-group">
+                    <div class="input-group">
                         <input type="text" id="searchCliente" class="form-control" placeholder="Buscar por nombre de cliente">
                     </div>
                 </div>
@@ -38,7 +38,9 @@
                                     <th>Detalles</th>
                                     <th>Número</th>
                                     <th>Fecha de registro</th>
+                                    <th>Fecha de salida</th>
                                     <th>Estado</th>
+                                    <th>Precio</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,17 +55,19 @@
                                         <td><?php echo $row['detalles'] ?></td>
                                         <td><?php echo $row['numero'] ?></td>
                                         <td><?php echo $row['fecha_registro'] ?></td>
+                                        <td><?php echo $row['fecha_salida'] ?></td>
                                         <td><?php echo $row['estado'] ?></td>
+                                        <td><?php echo $row['precio'] ?></td>
                                         <td>
                                             <div class="row">
-                                                <div >
-                                                    <a title="Modificar Cliente" data-toggle="modal" data-target="#EditModal" href="javascript:void(0);" onclick="document.getElementById('id_cliente').value = <?= $row['id_cliente'] ?>;document.getElementById('nombres').value = '<?= $row['nombres'] ?>';document.getElementById('equipo').value = '<?= $row['equipo'] ?>';document.getElementById('imei').value = '<?= $row['imei'] ?>';document.getElementById('detalles').value = '<?= $row['detalles'] ?>';document.getElementById('numero').value = '<?= $row['numero'] ?>';document.getElementById('fecha_registro').value = '<?= $row['fecha_registro'] ?>';document.getElementById('estado').value = '<?= $row['estado'] ?>';" class="btn btn-success btn-sm">
-                                                        <i class="fas fa-edit"></i> Modificar
+                                                <div>
+                                                    <a title="Modificar Cliente" data-toggle="modal" data-target="#EditModal" href="javascript:void(0);" onclick="document.getElementById('id_cliente').value = <?= $row['id_cliente'] ?>;document.getElementById('nombres').value = '<?= $row['nombres'] ?>';document.getElementById('equipo').value = '<?= $row['equipo'] ?>';document.getElementById('imei').value = '<?= $row['imei'] ?>';document.getElementById('detalles').value = '<?= $row['detalles'] ?>';document.getElementById('numero').value = '<?= $row['numero'] ?>';document.getElementById('fecha_registro').value = '<?= $row['fecha_registro'] ?>';document.getElementById('fecha_salida').value = '<?= $row['fecha_salida'] ?>';document.getElementById('estado').value = '<?= $row['estado'] ?>';document.getElementById('precio').value = '<?= $row['precio'] ?>';" class="btn btn-success btn-sm">
+                                                        <i class="fas fa-edit"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <a title="Eliminar Cliente" data-toggle="modal" data-target="#DeleteModal" href="javascript:void(0);" onclick="document.getElementById('delete_id').value = <?= $row['id_cliente'] ?>;document.getElementById('delete_nombre').innerHTML = '<?= $row['nombres'] ?>';" class="btn btn-danger btn-sm borrar">
-                                                        <i class="fas fa-trash"></i> Eliminar
+                                                        <i class="fas fa-trash"></i>
                                                     </a>
                                                 </div>
                                             </div>
@@ -123,7 +127,7 @@
                     </div>
                     <div class="form-group">
                         <label>IMEI</label>
-                        <input type="number" name="add_imei" id="add_imei" class="form-control" placeholder="IMEI del equipo">
+                        <input type="number" name="add_imei" id="add_imei" class="form-control" placeholder="IMEI del equipo" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="20">
                     </div>
                     <div class="form-group">
                         <label>Detalles</label>
@@ -131,18 +135,28 @@
                     </div>
                     <div class="form-group">
                         <label>Número</label>
-                        <input type="number" name="add_numero" id="add_numero" class="form-control" placeholder="Contacto a llamar" onkeypress="return validarNumero(event)" required>
+                        <input type="number" name="add_numero" id="add_numero" class="form-control" placeholder="Contacto a llamar" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" onkeypress="return validarNumero(event)" required>
                     </div>
                     <div class="form-group">
                         <label>Fecha de registro</label>
                         <input type="date" name="add_fecha_registro" id="add_fecha_registro" class="form-control" required>
                     </div>
                     <div class="form-group">
+                        <label>Fecha de salida</label>
+                        <input type="date" name="add_fecha_salida" id="add_fecha_salida" class="form-control">
+                    </div>
+                    <div class="form-group">
                         <label>Estado</label>
                         <select type="option" name="add_estado" id="add_estado" class="form-control" name="estado" required>
-                            <option value="Pendiente">Pendiente</option>
-                            <option value="Finalizado">Finalizado</option>
+                            <option value="Recibido">Recibido</option>
+                            <option value="Reparado">Reparado</option>
+                            <option value="No Reparado">No Reparado</option>
+                            <option value="Entregado al cliente">Entregado al cliente</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio</label>
+                        <input type="number" name="add_precio" id="add_precio" class="form-control" placeholder="Precio a pagar" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="5" onkeypress="return validarNumero(event)" required>
                     </div>
 
                     <input type="submit" name="ingresar_cliente" Value="Registrar" class="btn btn-primary">
@@ -177,7 +191,7 @@
                     </div>
                     <div class="form-group">
                         <label>IMEI</label>
-                        <input type="number" name="imei" id="imei" class="form-control" onkeypress="return">
+                        <input type="number" name="imei" id="imei" class="form-control" onkeypress="return" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="20">
                     </div>
                     <div class="form-group">
                         <label>Detalles</label>
@@ -185,18 +199,29 @@
                     </div>
                     <div class="form-group">
                         <label>Número</label>
-                        <input type="number" name="numero" id="numero" class="form-control" required>
+                        <input type="number" name="numero" id="numero" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" required>
                     </div>
                     <div class="form-group">
                         <label>Fecha de registro</label>
                         <input type="date" name="fecha_registro" id="fecha_registro" class="form-control" required>
                     </div>
                     <div class="form-group">
+                        <label>Fecha de salida</label>
+                        <input type="date" name="fecha_salida" id="fecha_salida" class="form-control" required>
+                    </div>
+                    <div class="form-group">
                         <label>Estado</label>
                         <select type="option" name="estado" id="estado" class="form-control" required>
-                            <option value="Pendiente">Pendiente</option>
-                            <option value="Finalizado">Finalizado</option>
+                            <option value="Recibido">Recibido</option>
+                            <option value="Reparado">Reparado</option>
+                            <option value="No Reparado">No Reparado</option>
+                            <option value="Entregado al cliente">Entregado al cliente</option>
+
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio</label>
+                        <input type="number" name="precio" id="precio" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="5" onkeypress="return validarNumero(event)" required>
                     </div>
 
                     <input type="submit" name="modificar_cliente" id="modificar_cliente" Value="Actualizar" class="btn btn-success">

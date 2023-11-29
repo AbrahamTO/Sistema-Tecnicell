@@ -11,7 +11,10 @@ if (isset($_POST['ingresar_cliente'])) {
     $add_detalles = mysqli_real_escape_string($con, $_POST['add_detalles'] ?? '');
     $add_numero = mysqli_real_escape_string($con, $_POST['add_numero'] ?? '');
     $add_fecha_registro = mysqli_real_escape_string($con, $_POST['add_fecha_registro'] ?? '');
+    $add_fecha_salida = mysqli_real_escape_string($con, $_POST['add_fecha_salida'] ?? '');
     $add_estado = mysqli_real_escape_string($con, $_POST['add_estado'] ?? '');
+    $add_precio = mysqli_real_escape_string($con, $_POST['add_precio'] ?? '');
+
 
 
     if (strlen($mensaje) > 0) {
@@ -23,7 +26,10 @@ if (isset($_POST['ingresar_cliente'])) {
         $cliente->detalles = $add_detalles;
         $cliente->numero = $add_numero;
         $cliente->fecha_registro = $add_fecha_registro;
+        $cliente->fecha_salida = $add_fecha_salida;
         $cliente->estado = $add_estado;
+        $cliente->precio = $add_precio;
+
         $res = $cliente->Registro($con);
         if ($res) {
             $_SESSION['mensaje'] = "<b>Cliente registrado exitosamente</b>";
@@ -39,7 +45,10 @@ if (isset($_POST['ingresar_cliente'])) {
     $detalles = mysqli_real_escape_string($con, $_POST['detalles'] ?? '');
     $numero = mysqli_real_escape_string($con, $_POST['numero'] ?? '');
     $fecha_registro = mysqli_real_escape_string($con, $_POST['fecha_registro'] ?? '');
+    $precio = mysqli_real_escape_string($con, $_POST['precio'] ?? '');
     $estado = mysqli_real_escape_string($con, $_POST['estado'] ?? '');
+    $precio = mysqli_real_escape_string($con, $_POST['precio'] ?? '');
+
     $id_cliente = $_POST['id_cliente'];
 
     if (strlen($mensaje) > 0) {
@@ -51,7 +60,9 @@ if (isset($_POST['ingresar_cliente'])) {
         $cliente->detalles = $detalles;
         $cliente->numero = $numero;
         $cliente->fecha_registro = $fecha_registro;
+        $cliente->fecha_salida = $fecha_salida;
         $cliente->estado = $estado;
+        $cliente->precio = $precio;
         $cliente->id_cliente = $id_cliente;
         $res = $cliente->Modificar($con);
         if ($res) {

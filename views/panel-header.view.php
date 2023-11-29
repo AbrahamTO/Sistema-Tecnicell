@@ -1,3 +1,4 @@
+
 <div class="wrapper">
 
     <!-- Navbar -->
@@ -17,7 +18,7 @@
                 <i class="far fa-user"></i>
             </a>
             <a class="nav-link text-danger" href="panel.php?modulo=cerrar" title="Cerrar sesion">
-                <i class="fas fa-door-closed    "></i>
+                <i class="fas fa-door-closed"></i>
             </a>
 
         </ul>

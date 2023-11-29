@@ -7,7 +7,7 @@
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Agregar el ícono (imagen) -->
-    <link rel="icon" type="image/png" href="/Sistema-Tecnicell-main/dist/img/imgpeque.png">
+    <link rel="icon" href="dist/img/imgpeque.ico">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->

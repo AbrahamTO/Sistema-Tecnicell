@@ -42,6 +42,9 @@
                                     <th>Nombre</th>
                                     <th>Cantidad</th>
                                     <th>Categoria</th>
+                                    <th>Precio</th>
+                                    <th>Stock</th>
+                                    <th>Devuelto</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,16 +56,19 @@
                                         <td><?php echo $row['nombres'] ?></td>
                                         <td><?php echo $row['cantidad'] ?></td>
                                         <td><?php echo $row['categoria'] ?></td>
+                                        <td><?php echo $row['precio'] ?></td>
+                                        <td><?php echo $row['stock'] ?></td>
+                                        <td><?php echo $row['devuelto'] ?></td>
                                         <td>
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <a title="Modificar Producto" data-toggle="modal" data-target="#EditModal" href="javascript:void(0);" onclick="document.getElementById('id_productos').value = <?= $row['id_productos'] ?>;document.getElementById('nombres').value = '<?= $row['nombres'] ?>';document.getElementById('cantidad').value = '<?= $row['cantidad'] ?>';document.getElementById('categoria').value = '<?= $row['categoria'] ?>';" class="btn btn-success btn-sm">
-                                                        <i class="fas fa-edit"></i> Modificar
+                                                    <a title="Modificar Producto" data-toggle="modal" data-target="#EditModal" href="javascript:void(0);" onclick="document.getElementById('id_productos').value = <?= $row['id_productos'] ?>;document.getElementById('nombres').value = '<?= $row['nombres'] ?>';document.getElementById('cantidad').value = '<?= $row['cantidad'] ?>';document.getElementById('categoria').value = '<?= $row['categoria'] ?>'; document.getElementById('precio').value = '<?= $row['precio'] ?>'; document.getElementById('stock').value = '<?= $row['stock'] ?>'; document.getElementById('devuelto').value = '<?= $row['devuelto'] ?>';" class="btn btn-success btn-sm">
+                                                        <i class="fas fa-edit"></i> 
                                                     </a>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <a title="Eliminar Producto" data-toggle="modal" data-target="#DeleteModal" href="javascript:void(0);" onclick="document.getElementById('delete_id').value = <?= $row['id_productos'] ?>;document.getElementById('delete_nombre').innerHTML = '<?= $row['nombres'] ?>';" class="btn btn-danger btn-sm borrar">
-                                                        <i class="fas fa-trash"></i> Eliminar
+                                                        <i class="fas fa-trash"></i>
                                                     </a>
                                                 </div>
                                             </div>
@@ -128,7 +134,18 @@
                             <option value="Repuestos">Repuestos</option>
                         </select>
                     </div>
-
+                    <div class="form-group">
+                        <label>Precio</label>
+                        <input type="number" name="add_precio" id="add_precio" class="form-control" placeholder="Precio" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" name="add_stock" id="add_stock" class="form-control" placeholder="Stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Devuelto</label>
+                        <input type="number" name="add_devuelto" id="add_devuelto" class="form-control" required>
+                    </div>
                     <input type="submit" name="ingresar_productos" Value="Registrar" class="btn btn-primary">
 
                 </form>
@@ -165,6 +182,18 @@
                             <option value="Accesorios">Accesorios</option>
                             <option value="Repuestos">Repuestos</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio</label>
+                        <input type="number" name="precio" id="precio" class="form-control"required>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input type="number" name="stock" id="stock" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Devuelto</label>
+                        <input type="number" name="devuelto" id="devuelto" class="form-control" required>
                     </div>
 
                     <input type="submit" name="modificar_productos" id="modificar_productos" Value="Actualizar" class="btn btn-success">
